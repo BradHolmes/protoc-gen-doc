@@ -81,6 +81,10 @@ var funcMap = map[string]interface{}{
 	"anchor": AnchorFilter,
 }
 
+func AddFunctions(key string, func_for_key interface{}) {
+	funcMap[key] = func_for_key
+}
+
 // Processor is an interface that is satisfied by all built-in processors (text, html, and json).
 type Processor interface {
 	Apply(template *Template) ([]byte, error)
